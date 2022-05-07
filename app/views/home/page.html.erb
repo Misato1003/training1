@@ -1,0 +1,24 @@
+<div class="school-img">
+  <img src="https://sakutto-sozai.com/wp-content/uploads/2021/03/elementary-school_001.png" alt="学校">
+</div>
+  
+<div class="main-content">
+  <h1>ユーザー検索</h1>
+
+  <%= search_form_for @q do |f| %>
+    <%= f.label :name_cont, 'ユーザー名' %>
+    <%= f.search_field :name_cont %>
+    <%= f.label :age_eq, '年齢' %>
+    <%= f.search_field :age_eq %>
+    <%= f.label :age_or_height_or_weight_gt, "数値を入力してください" %>
+    <%= f.search_field :age_or_height_or_weight_gt %>
+    <br>
+    <%= f.submit '検索' %>
+  <% end %>
+  <div class="main-content">
+    <p><%= link_to 'ログイン', new_name_session_path %></p>
+    <p><%= link_to '新規登録', new_name_registration_path %></p>
+    <p><%= link_to 'ログアウト', destroy_name_session_path, method: :delete %></p>
+  </div>
+</div>
+
